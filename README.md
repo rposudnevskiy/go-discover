@@ -26,7 +26,7 @@ function.
  * DigitalOcean [Config options](https://github.com/hashicorp/go-discover/blob/8b3ddf4/provider/digitalocean/digitalocean_discover.go#L22-L30)
  * Google Cloud [Config options](https://github.com/hashicorp/go-discover/blob/8b3ddf4/provider/gce/gce_discover.go#L23-L43)
  * Linode [Config options](https://github.com/hashicorp/go-discover/blob/master/provider/linode/linode_discover.go#L30-L41)
- * mDNS [Config options](https://github.com/hashicorp/go-discover/blob/master/provider/mdns/mdns_provider.go#L19-L31)
+ * mDNS [Config options](https://github.com/rposudnevskiy/go-discover/blob/master/provider/mdns/mdns_provider.go#L19-L32)
  * Microsoft Azure [Config options](https://github.com/hashicorp/go-discover/blob/8b3ddf4/provider/azure/azure_discover.go#L24-L62)
  * Openstack [Config options](https://github.com/hashicorp/go-discover/blob/8b3ddf4/provider/os/os_discover.go#L29-L44)
  * Scaleway [Config options](https://github.com/hashicorp/go-discover/blob/8b3ddf4/provider/scaleway/scaleway_discover.go#L14-L22)

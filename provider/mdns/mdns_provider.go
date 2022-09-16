@@ -23,6 +23,7 @@ func (p *Provider) Help() string {
     service:           The mDNS service name.
     domain:            The mDNS discovery domain.  Default "local".
     timeout:           The mDNS lookup timeout.  Default "5s" (five seconds).
+    interface:         The name of multicast interface to use. "eth0", "enp0s8" etc.
     v6:                IPv6 will be allowed and preferred when set to "true"
                        and disabled when set to "false".  Default "true".
     v4:                IPv4 will be allowed when set to "true" and disabled
@@ -86,6 +87,19 @@ func (p *Provider) Addrs(args map[string]string, l *log.Logger) ([]string, error
 	} else {
 		v4 = true
 	}
+
+	// validate and set interface
+	if args["interface"] != "" {
+		if netif, err = net.InterfaceByName(args["interface"]); err != nil {
+			return nil, fmt.Errorf("discover-mdns: Incorrect network interface name %s provided",
+				args["interface"])
+		}
+		params.Interface = netif
+	}
+
+	// Disable/Enable usage of IPv4/IPv6 for MDNS operations
+	params.DisableIPv4 = !v4
+	params.DisableIPv6 = !v6
 
 	// init entries channel
 	ch = make(chan *m.ServiceEntry)
