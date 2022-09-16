@@ -1,4 +1,6 @@
-module github.com/hashicorp/go-discover
+module github.com/rposudnevskiy/go-discover
+
+replace github.com/hashicorp/go-discover => ./
 
 require (
 	github.com/Azure/azure-sdk-for-go v44.0.0+incompatible
