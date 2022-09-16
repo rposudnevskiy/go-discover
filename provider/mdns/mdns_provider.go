@@ -38,6 +38,7 @@ func (p *Provider) Addrs(args map[string]string, l *log.Logger) ([]string, error
 	var v6, v4 bool
 	var addrs []string
 	var err error
+	var netif *net.Interface
 
 	// default to null logger
 	if l == nil {
